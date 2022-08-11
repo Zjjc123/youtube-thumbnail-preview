@@ -1,7 +1,7 @@
 .search-bar {
   display: flex;
   flex-grow: 1;
-  margin: 0 2rem 0 4rem;
+  margin: 0 8rem 0 10rem;
 }
 
 .search-input {
@@ -11,6 +11,10 @@
   border: 1px solid #777;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.search-input:focus {
+    outline-color: #3ea6ff;
 }
 
 .search-btn {

@@ -1,6 +1,6 @@
 import "../styles/header.css"
 
-import { MdApps, MdNotificationsNone, MdSearch, MdUpload } from "react-icons/md";
+import { MdNotificationsNone, MdSearch, MdUpload } from "react-icons/md";
 import { YouTubeIcon } from "../icons/youtube";
 
 export const Header = () => {
@@ -22,13 +22,10 @@ export const Header = () => {
       </form>
       <div className="menu-icons">
         <a href="#">
-          <MdUpload />
+          <MdUpload size={24} color="black"/>
         </a>
         <a href="#">
-          <MdApps />
-        </a>
-        <a href="#">
-          <MdNotificationsNone />
+          <MdNotificationsNone size={24} color="black"/>
         </a>
         <a href="#">
           <img
