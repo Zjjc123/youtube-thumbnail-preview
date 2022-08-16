@@ -6,9 +6,9 @@ import { YouTubeIcon } from "../icons/youtube";
 export const Header = () => {
   return (
     <header className="header">
-      <a href="#">
+      <div>
         <YouTubeIcon />
-      </a>
+      </div>
       <form className="search-bar">
         <input
           className="search-input"
@@ -21,19 +21,19 @@ export const Header = () => {
         </button>
       </form>
       <div className="menu-icons">
-        <a href="#">
+        <div>
           <MdUpload size={24} color="black" />
-        </a>
-        <a href="#">
+        </div>
+        <div>
           <MdNotificationsNone size={24} color="black" />
-        </a>
-        <a href="#">
+        </div>
+        <div>
           <img
             className="menu-channel-icon"
             src="http://unsplash.it/36/36?gravity=center"
             alt="Your Channel"
           />
-        </a>
+        </div>
       </div>
     </header>
   );
