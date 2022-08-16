@@ -6,6 +6,7 @@
 .thumbnail {
   position: relative;
   display: flex;
+  cursor: pointer;
 }
 
 .thumbnail::before {
@@ -84,4 +85,9 @@
 .hidden {
   position: absolute;
   visibility: hidden;
+}
+
+.editable:focus {
+  outline-color: #3ea6ff;
+  color: #3ea6ff;
 }

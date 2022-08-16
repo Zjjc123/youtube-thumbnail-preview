@@ -32,8 +32,7 @@ export const Video = (props: VideoElement) => {
         onChange={(e) => handleFile(e)}
         ref={fileHandler}
       />
-      <a
-        href="#"
+      <div
         className="thumbnail"
         data-duration="12:24"
         onClick={openFileHandler}
@@ -41,21 +40,22 @@ export const Video = (props: VideoElement) => {
         <img
           className="thumbnail-image"
           src={file !== "" ? file : props.thumbnail}
+          alt="thumbnail"
         ></img>
-      </a>
+      </div>
       <div className="video-bottom-section">
-        <a href="#">
-          <img className="channel-icon" src={props.channel_icon}></img>
-        </a>
+        <div>
+          <img className="channel-icon" src={props.channel_icon} alt="channel icon"></img>
+        </div>
         <div className="video-details">
-          <a href="#" className="video-title">
+          <div className="video-title editable" contentEditable>
             {props.title}
-          </a>
-          <a href="#" className="video-channel-name">
+          </div>
+          <div className="video-channel-name editable" contentEditable>
             {props.channel}
-          </a>
+          </div>
           <div className="video-metadata">
-            <span>{props.views} views</span> • <span>{props.date}</span>
+            <span className="editable" contentEditable>{props.views}</span> <span>views</span> • <span  className="editable" contentEditable>{props.date}</span>
           </div>
         </div>
       </div>
