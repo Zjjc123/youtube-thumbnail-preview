@@ -1,4 +1,4 @@
-import "../styles/header.css"
+import "../styles/header.css";
 
 import { MdNotificationsNone, MdSearch, MdUpload } from "react-icons/md";
 import { YouTubeIcon } from "../icons/youtube";
@@ -22,10 +22,10 @@ export const Header = () => {
       </form>
       <div className="menu-icons">
         <a href="#">
-          <MdUpload size={24} color="black"/>
+          <MdUpload size={24} color="black" />
         </a>
         <a href="#">
-          <MdNotificationsNone size={24} color="black"/>
+          <MdNotificationsNone size={24} color="black" />
         </a>
         <a href="#">
           <img
