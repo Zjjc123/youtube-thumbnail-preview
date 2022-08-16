@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/://zjjc123.github.io/thumbnail-preview/static/css/main.c6264072.css",
+    "main.js": "/://zjjc123.github.io/thumbnail-preview/static/js/main.cef2489e.js",
+    "index.html": "/://zjjc123.github.io/thumbnail-preview/index.html",
+    "main.c6264072.css.map": "/://zjjc123.github.io/thumbnail-preview/static/css/main.c6264072.css.map",
+    "main.cef2489e.js.map": "/://zjjc123.github.io/thumbnail-preview/static/js/main.cef2489e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6264072.css",
+    "static/js/main.cef2489e.js"
+  ]
+}
