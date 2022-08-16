@@ -1,7 +1,7 @@
 {
   "name": "thumbnail-preview",
   "version": "0.1.0",
-  "homepage": "https:://zjjc123.github.io/thumbnail-preview",
+  "homepage": "https://zjjc123.github.io/thumbnail-preview",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
