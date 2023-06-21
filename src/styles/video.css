@@ -48,6 +48,7 @@
 .video-details {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .video-title {
@@ -85,6 +86,14 @@
 .hidden {
   position: absolute;
   visibility: hidden;
+}
+
+.editable {
+  color: #444;
+}
+
+.editable img {
+  opacity: 0.5;
 }
 
 .editable:focus {

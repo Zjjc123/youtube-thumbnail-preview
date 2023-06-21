@@ -1,5 +1,5 @@
 import "../styles/video.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export interface VideoElement {
   thumbnail: string;
@@ -8,6 +8,8 @@ export interface VideoElement {
   date: string;
   channel: string;
   channel_icon: string;
+
+  editable?: boolean;
 }
 
 export const Video = (props: VideoElement) => {
@@ -19,21 +21,22 @@ export const Video = (props: VideoElement) => {
   };
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(file);
     if (e.target.files) setFile(URL.createObjectURL(e.target.files[0]));
-    console.log(e.target.files);
   };
 
   return (
     <article className="video-container">
-      <input
-        className="hidden"
-        type="file"
-        onChange={(e) => handleFile(e)}
-        ref={fileHandler}
-      />
+      {props.editable ? (
+        <input
+          className="hidden"
+          type="file"
+          onChange={(e) => handleFile(e)}
+          ref={fileHandler}
+        />
+      ) : null}
+
       <div
-        className="thumbnail"
+        className={"thumbnail " + (props.editable ? "editable" : "")}
         data-duration="12:24"
         onClick={openFileHandler}
       >
@@ -44,18 +47,42 @@ export const Video = (props: VideoElement) => {
         ></img>
       </div>
       <div className="video-bottom-section">
-        <div>
-          <img className="channel-icon" src={props.channel_icon} alt="channel icon"></img>
+        <div className={props.editable ? "editable" : ""}>
+          <img
+            className="channel-icon"
+            src={props.channel_icon}
+            alt="channel icon"
+          ></img>
         </div>
         <div className="video-details">
-          <div className="video-title editable" contentEditable>
+          <div
+            className={"video-title " + (props.editable ? "editable" : "")}
+            contentEditable={props.editable}
+          >
             {props.title}
           </div>
-          <div className="video-channel-name editable" contentEditable>
+          <div
+            className={
+              "video-channel-name " + (props.editable ? "editable" : "")
+            }
+            contentEditable={props.editable}
+          >
             {props.channel}
           </div>
           <div className="video-metadata">
-            <span className="editable" contentEditable>{props.views}</span> <span>views</span> • <span  className="editable" contentEditable>{props.date}</span>
+            <span
+              className={props.editable ? "editable" : ""}
+              contentEditable={props.editable}
+            >
+              {props.views}
+            </span>{" "}
+            <span>views</span> •{" "}
+            <span
+              className={props.editable ? "editable" : ""}
+              contentEditable={props.editable}
+            >
+              {props.date}
+            </span>
           </div>
         </div>
       </div>
