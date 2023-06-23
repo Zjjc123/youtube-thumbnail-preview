@@ -5,10 +5,10 @@ import { Header } from "./components/header";
 import { useState } from "react";
 import { Categories } from "./components/categories";
 
-import untyped_videos from "./data/recs.json";
+import untyped_videos from "./data/data.json";
 import { MdEdit, MdSave } from "react-icons/md";
 
-const video_list: VideoElement[] = untyped_videos.videos;
+const video_list: VideoElement[] = untyped_videos as VideoElement[];
 
 function App() {
   const [editable, setEditable] = useState<boolean>(false);
@@ -21,12 +21,14 @@ function App() {
         <section className="video-section">
           {video_list.map((v) => (
             <Video
-              thumbnail={v.thumbnail}
+              thumbnail_cover={v.thumbnail_cover}
               title={v.title}
               views={v.views}
               date={v.date}
-              channel={v.channel}
+              channel_name={v.channel_name}
               channel_icon={v.channel_icon}
+              url={v.url}
+              duration={v.duration}
               editable={editable}
             />
           ))}
@@ -38,9 +40,7 @@ function App() {
           setEditable(!editable);
         }}
       >
-        {
-          editable ? <MdSave /> : <MdEdit />
-        }
+        {editable ? <MdSave /> : <MdEdit />}
       </button>
     </div>
   );

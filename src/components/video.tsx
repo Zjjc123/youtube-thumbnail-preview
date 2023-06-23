@@ -1,13 +1,15 @@
 import "../styles/video.css";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 export interface VideoElement {
-  thumbnail: string;
   title: string;
+  url: string;
+  thumbnail_cover: string;
+  channel_name: string;
+  channel_icon: string;
   views: string;
   date: string;
-  channel: string;
-  channel_icon: string;
+  duration: string;
 
   editable?: boolean;
 }
@@ -42,7 +44,7 @@ export const Video = (props: VideoElement) => {
       >
         <img
           className="thumbnail-image"
-          src={file !== "" ? file : props.thumbnail}
+          src={file !== "" ? file : props.thumbnail_cover}
           alt="thumbnail"
         ></img>
       </div>
@@ -67,7 +69,7 @@ export const Video = (props: VideoElement) => {
             }
             contentEditable={props.editable}
           >
-            {props.channel}
+            {props.channel_name}
           </div>
           <div className="video-metadata">
             <span
@@ -76,7 +78,7 @@ export const Video = (props: VideoElement) => {
             >
               {props.views}
             </span>{" "}
-            <span>views</span> •{" "}
+            •{" "}
             <span
               className={props.editable ? "editable" : ""}
               contentEditable={props.editable}
