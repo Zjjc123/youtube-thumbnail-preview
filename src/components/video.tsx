@@ -39,7 +39,7 @@ export const Video = (props: VideoElement) => {
 
       <div
         className={"thumbnail " + (props.editable ? "editable" : "")}
-        data-duration="12:24"
+        data-duration={props.duration}
         onClick={openFileHandler}
       >
         <img
